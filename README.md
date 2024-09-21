@@ -6,7 +6,7 @@ Rmappy Website <p>
 https://rnithackathon.netlify.app<p>
 
 <img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/Demo_Rmappy.gif?raw=true"></img>
-We will provide a demo video showcasing the app's core features, including GPS guidance and visual guides for navigating the campus buildings. The video will demonstrate the ease of use, highlighting how students can confidently find their way around campus using the app.
+We displyed a demo video showcasing the app's core features, including GPS guidance and visual guides for navigating the campus buildings. The video will demonstrate the ease of use, highlighting how students can confidently find their way around campus using the app.
 
 # Target Audience and Market
 Our target audience is primarily RMIT students, particularly those unfamiliar with the campus layout. Additionally, staff and **visitors** may find the app useful in navigating the numerous buildings at RMIT.
