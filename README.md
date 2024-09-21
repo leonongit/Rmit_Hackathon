@@ -54,15 +54,50 @@ Our app saves students time and reduces confusion by offering a streamlined solu
 
 # Developmental Solutions
 
-Issue 1 - Geolocation Fallback Handling :
-When retrieving the user’s current location, there’s a potential issue where geolocation fails (if the user denies permission, or their browser doesn’t support geolocation). In the original code, there was no fallback handling for this scenario, which could result in an error or unexpected behavior.
+Issue 1 - In the earlier version of the code, the course selection worked fine, but when selecting a course, the subject dropdown wasn't being populated correctly, or it was remaining disabled. This confused users because they couldn't select a subject after choosing a course.
+
+- Users could not select a subject after choosing a course.
+- The subject dropdown remained empty or disabled, blocking further actions.
 
 Before
 
 ```
+courseSelect.addEventListener('change', function () {
+    const selectedCourse = this.value;
+    subjectSelect.innerHTML = ''; 
+    subjectSelect.disabled = true;
+});
+```
+Solution: The issue was fixed by ensuring the subject dropdown is properly populated and enabled when a valid course is selected.subjectSelect.innerHTML = '<option value="">Select Subject</option>'; resets the dropdown to show a placeholder, subjectSelect.disabled = false; enables the dropdown, the loop for (const subject in subjects) populates it with subjects, and navigateBtn.disabled = true; keeps the "Navigate" button disabled until both course and subject are selected.
+
+```
+courseSelect.addEventListener('change', function () {
+    const selectedCourse = this.value;
+    subjectSelect.innerHTML = '<option value="">Select Subject</option>';
+    subjectSelect.disabled = true;
+    navigateBtn.disabled = true;
+
+    if (selectedCourse) {
+        // Enabling and dynamically populating the subject dropdown
+        subjectSelect.disabled = false;
+        for (const subject in subjects) {
+            const option = document.createElement('option');
+            option.value = subject;
+            option.textContent = subject;
+            subjectSelect.appendChild(option);
+        }
+    }
+});
+```
+<div>
+Issue2 - In an older version of the code, if the user denied the geolocation request or if the request timed out, there was no proper error message shown. This left users wondering what went wrong when trying to get their location.
+- Users weren’t given a clear message if geolocation failed or if they denied permission.
+- The app didn’t handle timeouts or location errors well, leaving users stuck.
+Before 
+
+```
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
-        // Success case
         const userLocation = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
@@ -70,10 +105,10 @@ if (navigator.geolocation) {
         getDirections(userLocation, destination);
     });
 } else {
-    alert('Geolocation is not supported by your browser.');
+    alert('Geolocation is not supported.');
 }
 ```
-Solution: Added better error handling in the getCurrentPosition function to manage cases where geolocation fails or times out. This ensures that the user is notified properly and fallback actions can be taken if necessary.
+Solution: The geolocation function has been updated with proper error handling. If a user denies location access or if geolocation fails, appropriate messages are displayed.The getCurrentPosition function now includes error handling for geolocation failures, providing specific messages for PERMISSION_DENIED, POSITION_UNAVAILABLE, TIMEOUT, and a default case, while using options like enableHighAccuracy: true, timeout: 10000, and maximumAge: 0 to improve geolocation accuracy and handling.
 
 ```
 if (navigator.geolocation) {
@@ -86,7 +121,7 @@ if (navigator.geolocation) {
             getDirections(userLocation, destination);
         }, 
         function (error) { 
-            // Error handling for geolocation failure
+            // Adding error handling
             switch(error.code) {
                 case error.PERMISSION_DENIED:
                     alert("User denied the request for Geolocation.");
@@ -103,57 +138,13 @@ if (navigator.geolocation) {
             }
         }, 
         {
-            enableHighAccuracy: true, // Request high accuracy
-            timeout: 10000, // Timeout after 10 seconds
-            maximumAge: 0 // Prevent using cached location data
+            enableHighAccuracy: true,
+            timeout: 10000, // Timeout set to 10 seconds
+            maximumAge: 0 // Prevent caching of old location data
         }
     );
 } else {
     alert('Geolocation is not supported by your browser.');
-}
-```
-<div>
-Issue2 - Map Re-rendering Efficiency : In the original code, every time a new location was provided or a new destination was set, the entire map was re-rendered. This caused performance issues, particularly on slower devices, as it involved resetting the entire map instead of just updating the necessary parts like markers or routes.
-
-Before 
-
-```
-function updateMap(location) {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: location,
-        zoom: 15
-    });
-}
-```
-Solution: Instead of re-rendering the entire map, the marker and route were updated selectively, which drastically improved performance by reducing unnecessary map resets.
-
-```
-function updateMarker(location) {
-    if (!marker) {
-        marker = new google.maps.Marker({
-            position: location,
-            map: map
-        });
-    } else {
-        marker.setPosition(location); // Efficiently update the marker's position
-    }
-}
-
-// Update route only when necessary, without re-rendering the whole map
-function updateRoute(userLocation, destination) {
-    const request = {
-        origin: userLocation,
-        destination: destination,
-        travelMode: google.maps.TravelMode.WALKING
-    };
-
-    directionsService.route(request, function (result, status) {
-        if (status === google.maps.DirectionsStatus.OK) {
-            directionsRenderer.setDirections(result); // Efficiently updates the route
-        } else {
-            alert('Directions request failed due to ' + status);
-        }
-    });
 }
 ```
 # Structure
