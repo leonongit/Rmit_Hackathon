@@ -10,9 +10,9 @@ Our target audience is primarily RMIT students, particularly those unfamiliar wi
 
 # Who Created It
 This project was created by 
-- NARY BYUN
--LWIN KO MIN
--NYO YAN NAING MIN
+- NARY BYUN <p>
+-LWIN KO MIN <p>
+-NYO YAN NAING MIN <p>
 
 
 # Project Period
@@ -44,8 +44,8 @@ Our app saves students time and reduces confusion by offering a streamlined solu
 
 # Solution Architecture
 The app uses:
-- ***Google API* to provide real-time navigation to RMIT buildings.
-- **Pictures ** of buildings  and classrooms that other users upload.
+- ***Google API*** to provide real-time navigation to RMIT buildings.
+- **Pictures** of buildings  and classrooms that other users upload.
 - **Visual guides**, in the form of photos, to aid navigation.
 Future versions will incorporate user-generated updates, with contributors earning credits or tokens.
 # Solution Architecture
@@ -93,3 +93,10 @@ By focusing on the **Google Maps API** and a lightweight **JavaScript-based fron
 
 # Web Development
 We are using **GitHub** to manage the project’s development. The **main branch** contains the stable version of the app, while the **development branch** is used for active work. New features such as GPS navigation and photo guides are developed in separate branches before being merged into `dev`.
+
+# User Perspective
+From the user’s perspective, the app provides:
+1. A search feature to find buildings or classrooms by name or number.
+2. **GPS-based navigation** to direct the user to the right building.
+3. **Visual guides** (photos) to help identify the correct building.
+In future updates, users will be able to upload building details and photos, earning credits or tokens for their contributions.
