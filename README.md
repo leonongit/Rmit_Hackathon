@@ -84,9 +84,6 @@ By focusing on the **Google Maps API** and a lightweight **JavaScript-based fron
 
 
 
-# Web Development
-We are using **GitHub** to manage the project’s development. The **main branch** contains the stable version of the app, while the **development branch** is used for active work. New features such as GPS navigation and photo guides are developed in separate branches before being merged into `dev`.
-
 # User Perspective
 From the user’s perspective, the app provides:
 1. A search feature to find buildings or classrooms by name or number.
