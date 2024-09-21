@@ -87,4 +87,4 @@ From the user’s perspective, the app provides:
 1. A search feature to find buildings or classrooms by name or number.
 2. **GPS-based navigation** to direct the user to the right building.
 3. **Visual guides** (photos) to help identify the correct building.
-In future updates, users will be able to upload building details and photos, earning credits or tokens for their contributions.
+Future development activities will include creating a system that allows users to interact by posting or rating each building on the website, as well as implementing additional features such as restricting visibility of updates (e.g., credits or photos) to those who made the updates. These enhancements aim to spark users' interest and attract more people to the platform. Furthermore, we can expect potential additional revenue through credits or subscriptions in the future.
