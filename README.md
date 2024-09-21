@@ -1,3 +1,8 @@
+# <p align="center">Rmappy
+<p align="center">
+CSIT & SWITCH Hackathon - MSEC project <p align="center">
+<img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/img/Screenshot%202024-09-20%20225644.png?raw=true" width="400px" height="400px" alt="logo"></img></p>
+
 # Problem Statement
 Our group project addresses a common and frustrating challenge faced by students at RMIT University: navigating the campus's numerous and often confusing buildings. This issue is particularly pronounced with buildings like 56 and 57, which are housed within the same larger structure, causing many students, especially newcomers, to mistakenly think they are in the wrong place. This confusion results in wasted time and added stress when trying to find classrooms, impacting punctuality and overall student experience. By identifying this problem, we aim to deliver a solution that simplifies campus navigation, reduces confusion, and improves the overall ease of finding the correct buildings. Our approach focuses on the needs of the target audience,students and is both technically and economically feasible, with a clear value proposition and a scalable plan for implementation.
 
@@ -47,12 +52,7 @@ Our app saves students time and reduces confusion by offering a streamlined solu
 # Solution Architecture
 
 <img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/userPerspective.png?raw=true"></img><p><img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/webDevelopment.png?raw=true"></img><p>
-The app uses:
-- ***Google API*** to provide real-time navigation to RMIT buildings.
-- **Pictures** of buildings  and classrooms that other users upload.
-- **Visual guides**, in the form of photos, to aid navigation.
-Future versions will incorporate user-generated updates, with contributors earning credits or tokens.
-# Solution Architecture
+
 
 The **RMIT Navigator** app utilizes **JavaScript**, **Google Maps API**, and **HTML** to provide real-time navigation assistance for students and staff on the RMIT University campus. The solution is designed to be lightweight, focusing on GPS navigation and visual guides without the need for a database. 
 
@@ -69,10 +69,8 @@ The **RMIT Navigator** app utilizes **JavaScript**, **Google Maps API**, and **H
      - Displaying a map view with markers for both the user's current location and the target destination.
    - The API also supports calculating the best route to the desired building and updating the route in real-time as the user moves.
 
-3. **Backend (JavaScript)**:
-   - A lightweight **JavaScript backend** handles the app’s logic, processing user requests and interfacing with the Google Maps API.
-   - When the user searches for a building, the backend sends the query to the Google Maps API and receives the necessary navigation data (GPS coordinates, directions, etc.).
-   - The backend forwards this information to the frontend, where it is displayed to the user in real-time, ensuring smooth and fast navigation.
+3. **Backend (JavaScript and Firebase)**:<p>
+The lightweight JavaScript backend, powered by Firebase, handles the app’s logic, processes user requests, and manages authentication using Firebase’s login API, which supports methods such as email/password or OAuth providers like Google. Once users are authenticated, Firebase ensures secure session management, enabling only authorized access to navigation features. When a user searches for a building, the backend interfaces with the Google Maps API to retrieve navigation data (e.g., GPS coordinates and directions) and forwards it to the frontend for real-time display. This seamless integration of Firebase ensures efficient data synchronization between the backend and frontend, providing smooth and fast navigation.
 
 4. **Visual Guides**:
    - Visual guides (such as photos of building entrances and key landmarks) are **hardcoded** or linked directly in the frontend, ensuring students can visually recognize their surroundings when navigating the campus.
@@ -91,4 +89,7 @@ From the user’s perspective, the app provides:
 1. A search feature to find buildings or classrooms by name or number.
 2. **GPS-based navigation** to direct the user to the right building.
 3. **Visual guides** (photos) to help identify the correct building.
-<p>Future development activities will include creating a system that allows users to interact by posting or rating each building on the website, as well as implementing additional features such as restricting visibility of updates (e.g., credits or photos) to those who made the updates. These enhancements aim to spark users' interest and attract more people to the platform. Furthermore, we can expect potential additional revenue through credits or subscriptions in the future.
+<p>
+  
+# Future scope 
+<p>development activities will include creating a system that allows users to interact by posting or rating each building on the website, as well as implementing additional features such as restricting visibility of updates (e.g., credits or photos) to those who made the updates. These enhancements aim to spark users' interest and attract more people to the platform. Furthermore, we can expect potential additional revenue through credits or subscriptions in the future.
