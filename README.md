@@ -8,7 +8,7 @@ We will provide a demo video showcasing the app's core features, including GPS g
 # Target Audience and Market
 Our target audience is primarily RMIT students, particularly those unfamiliar with the campus layout. Additionally, staff and **visitors** may find the app useful in navigating the numerous buildings at RMIT.
 
-# Who Created It
+# Who Created This
 This project was created by 
 - NARY BYUN <p>
 - LWIN KO MIN <p>
