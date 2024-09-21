@@ -52,7 +52,7 @@ Our app saves students time and reduces confusion by offering a streamlined solu
 
 
 
-# Solution Architecture
+# Developmental Solutions
 
 <img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/webDevelopment.png?raw=true"></img><p>
 
