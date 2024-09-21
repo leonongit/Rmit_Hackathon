@@ -74,14 +74,6 @@ The **RMIT Navigator** app utilizes **JavaScript**, **Google Maps API**, and **H
    - Visual guides (such as photos of building entrances and key landmarks) are **hardcoded** or linked directly in the frontend, ensuring students can visually recognize their surroundings when navigating the campus.
    - These images are stored locally within the app or fetched from external sources but do not require a database for storage.
 
-5. **API Integration**:
-   - The app makes asynchronous **AJAX requests** to the Google Maps API, ensuring smooth data retrieval without page reloads.
-   - Users can search for a building or classroom, and the app communicates with Google Maps to retrieve the corresponding location data and directions.
-   - The results are processed and displayed to the user, allowing them to follow the GPS directions and visual cues to their destination.
-
-6. **Future Expansion**:
-   - In future versions, the app can be expanded to include more functionality, such as user-contributed updates and photos. These could be stored on external platforms or integrated with a cloud-based solution.
-   - Additional features such as **route optimization** and **multi-point navigation** could also be added using Google Maps API’s advanced features.
 
 By focusing on the **Google Maps API** and a lightweight **JavaScript-based frontend**, this architecture ensures that RMIT students can easily navigate the campus without the complexity of managing a database. The solution is scalable, allowing future enhancements while maintaining simplicity in its current form.
 
