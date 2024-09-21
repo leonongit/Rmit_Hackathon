@@ -54,7 +54,7 @@ Our app saves students time and reduces confusion by offering a streamlined solu
 
 # Solution Architecture
 
-<img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/userPerspective.png?raw=true"></img><p><img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/webDevelopment.png?raw=true"></img><p>
+<img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/webDevelopment.png?raw=true"></img><p>
 
 
 The **RMIT Navigator** app utilizes **JavaScript**, **Google Maps API**, and **HTML** to provide real-time navigation assistance for students and staff on the RMIT University campus. The solution is designed to be lightweight, focusing on GPS navigation and visual guides without the need for a database. 
@@ -84,7 +84,7 @@ By focusing on the **Google Maps API** and a lightweight **JavaScript-based fron
 
 
 
-# User Perspective
+# User Perspective<p><img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/userPerspective.png?raw=true"></img><p>
 From the user’s perspective, the app provides:
 1. A search feature to find buildings or classrooms by name or number.
 2. **GPS-based navigation** to direct the user to the right building.
