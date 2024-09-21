@@ -11,8 +11,8 @@ Our target audience is primarily RMIT students, particularly those unfamiliar wi
 # Who Created It
 This project was created by 
 - NARY BYUN <p>
--LWIN KO MIN <p>
--NYO YAN NAING MIN <p>
+- LWIN KO MIN <p>
+- NYO YAN NAING MIN <p>
 
 
 # Project Period
