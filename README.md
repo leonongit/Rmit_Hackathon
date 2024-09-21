@@ -2,7 +2,10 @@
 Our group project addresses a common and frustrating challenge faced by students at RMIT University: navigating the campus's numerous and often confusing buildings. This issue is particularly pronounced with buildings like 56 and 57, which are housed within the same larger structure, causing many students, especially newcomers, to mistakenly think they are in the wrong place. This confusion results in wasted time and added stress when trying to find classrooms, impacting punctuality and overall student experience. By identifying this problem, we aim to deliver a solution that simplifies campus navigation, reduces confusion, and improves the overall ease of finding the correct buildings. Our approach focuses on the needs of the target audience,students and is both technically and economically feasible, with a clear value proposition and a scalable plan for implementation.
 
 # Demo Video
-Rmappy (rnithackathon.netlify.app)
+Rmappy Website <p>
+https://rnithackathon.netlify.app<p>
+
+<img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/Demo_Rmappy.gif?raw=true"></img>
 We will provide a demo video showcasing the app's core features, including GPS guidance and visual guides for navigating the campus buildings. The video will demonstrate the ease of use, highlighting how students can confidently find their way around campus using the app.
 
 # Target Audience and Market
@@ -23,7 +26,6 @@ The development period for this project is **31 hours**, during which we aim to 
 Our app saves students time and reduces confusion by offering a streamlined solution for navigating the RMIT campus. By combining **GPS navigation** and **visual guides** the app makes it easy to find the right buildings and classrooms, reducing stress and frustration.
 
 # Product Differentiation
-## Product Differentiation
 
 - **User-Friendly Interface**: The app offers a simple, intuitive interface that students can easily navigate, ensuring a seamless experience for all users, even those unfamiliar with technology.
   
@@ -43,6 +45,8 @@ Our app saves students time and reduces confusion by offering a streamlined solu
 
 
 # Solution Architecture
+
+<img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/userPerspective.png?raw=true"></img><p><img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/webDevelopment.png?raw=true"></img><p>
 The app uses:
 - ***Google API*** to provide real-time navigation to RMIT buildings.
 - **Pictures** of buildings  and classrooms that other users upload.
