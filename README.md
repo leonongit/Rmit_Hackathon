@@ -17,7 +17,7 @@ This project was created by
 
 # Project Period
 From 20th Sep 2024 To 21st Sep 2024 <p>
-The development period for this project is **41 hours**, during which we aim to deliver a Minimum Viable Product (MVP) with basic GPS functionality and visual guides. Future versions of the app will expand on this foundation with additional features.
+The development period for this project is **31 hours**, during which we aim to deliver a Minimum Viable Product (MVP) with basic GPS functionality and visual guides. Future versions of the app will expand on this foundation with additional features.
 
 # Value Proposition
 Our app saves students time and reduces confusion by offering a streamlined solution for navigating the RMIT campus. By combining **GPS navigation** and **visual guides** the app makes it easy to find the right buildings and classrooms, reducing stress and frustration.
