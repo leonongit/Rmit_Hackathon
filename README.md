@@ -110,7 +110,7 @@ if (navigator.geolocation) {
     alert('Geolocation is not supported.');
 }
 ```
-Solution: The geolocation function has been updated with proper error handling. If a user denies location access or if geolocation fails, appropriate messages are displayed.The getCurrentPosition function now includes error handling for geolocation failures, providing specific messages for PERMISSION_DENIED, POSITION_UNAVAILABLE, TIMEOUT, and a default case, while using options like enableHighAccuracy: true, timeout: 10000, and maximumAge: 0 to improve geolocation accuracy and handling.
+The geolocation function has been updated with proper error handling. If a user denies location access or if geolocation fails, appropriate messages are displayed. The getCurrentPosition function now includes error handling for geolocation failures, displaying a message if the location can't be retrieved. It uses options like enableHighAccuracy: true, timeout: 10000, and maximumAge: 0 to improve geolocation accuracy and performance.
 
 ```
 // Get user's current location
