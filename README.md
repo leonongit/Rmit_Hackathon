@@ -66,7 +66,7 @@ The **RMIT Navigator** app utilizes **JavaScript**, **Google Maps API**, and **H
    - The API also supports calculating the best route to the desired building and updating the route in real-time as the user moves.
 
 3. **Backend (JavaScript)**:
-   - A lightweight **JavaScript backend** (e.g., using **Node.js**) handles the app’s logic, processing user requests and interfacing with the Google Maps API.
+   - A lightweight **JavaScript backend** handles the app’s logic, processing user requests and interfacing with the Google Maps API.
    - When the user searches for a building, the backend sends the query to the Google Maps API and receives the necessary navigation data (GPS coordinates, directions, etc.).
    - The backend forwards this information to the frontend, where it is displayed to the user in real-time, ensuring smooth and fast navigation.
 
