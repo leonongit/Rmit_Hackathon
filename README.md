@@ -113,41 +113,28 @@ if (navigator.geolocation) {
 Solution: The geolocation function has been updated with proper error handling. If a user denies location access or if geolocation fails, appropriate messages are displayed.The getCurrentPosition function now includes error handling for geolocation failures, providing specific messages for PERMISSION_DENIED, POSITION_UNAVAILABLE, TIMEOUT, and a default case, while using options like enableHighAccuracy: true, timeout: 10000, and maximumAge: 0 to improve geolocation accuracy and handling.
 
 ```
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-        function (position) {
+// Get user's current location
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function (position) {
             const userLocation = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
             };
+            // Call the function to get directions from current location to destination
             getDirections(userLocation, destination);
-        }, 
-        function (error) { 
-            // Adding error handling
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    alert("User denied the request for Geolocation.");
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    alert("Location information is unavailable.");
-                    break;
-                case error.TIMEOUT:
-                    alert("The request to get user location timed out.");
-                    break;
-                default:
-                    alert("An unknown error occurred.");
-                    break;
-            }
-        }, 
-        {
-            enableHighAccuracy: true,
-            timeout: 10000, // Timeout set to 10 seconds
-            maximumAge: 0 // Prevent caching of old location data
+          }, function () {
+            alert('Error: Unable to retrieve your location.');
+          },
+          {
+            enableHighAccuracy: true, // Request high accuracy (uses GPS when available)
+            timeout: 10000, // Timeout after 10 seconds
+            maximumAge: 0 // Prevent using cached location data
+          });
+        } else {
+          alert('Geolocation is not supported by your browser.');
         }
-    );
-} else {
-    alert('Geolocation is not supported by your browser.');
-}
+      }
+    });
 ```
 # Structure
 <img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/webDevelopment.png?raw=true"></img><p>
