@@ -91,8 +91,10 @@ courseSelect.addEventListener('change', function () {
 ```
 <div>
 Issue2 - In an older version of the code, if the user denied the geolocation request or if the request timed out, there was no proper error message shown. This left users wondering what went wrong when trying to get their location.
-- Users weren’t given a clear message if geolocation failed or if they denied permission.
+
+  - Users weren’t given a clear message if geolocation failed or if they denied permission.
 - The app didn’t handle timeouts or location errors well, leaving users stuck.
+
 Before 
 
 ```
