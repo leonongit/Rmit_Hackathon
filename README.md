@@ -54,6 +54,109 @@ Our app saves students time and reduces confusion by offering a streamlined solu
 
 # Developmental Solutions
 
+Issue 1 - Geolocation Fallback Handling :
+When retrieving the user’s current location, there’s a potential issue where geolocation fails (if the user denies permission, or their browser doesn’t support geolocation). In the original code, there was no fallback handling for this scenario, which could result in an error or unexpected behavior.
+
+Before
+
+```
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        // Success case
+        const userLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
+        getDirections(userLocation, destination);
+    });
+} else {
+    alert('Geolocation is not supported by your browser.');
+}
+```
+Solution: Added better error handling in the getCurrentPosition function to manage cases where geolocation fails or times out. This ensures that the user is notified properly and fallback actions can be taken if necessary.
+
+```
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        function (position) {
+            const userLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            getDirections(userLocation, destination);
+        }, 
+        function (error) { 
+            // Error handling for geolocation failure
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Location information is unavailable.");
+                    break;
+                case error.TIMEOUT:
+                    alert("The request to get user location timed out.");
+                    break;
+                default:
+                    alert("An unknown error occurred.");
+                    break;
+            }
+        }, 
+        {
+            enableHighAccuracy: true, // Request high accuracy
+            timeout: 10000, // Timeout after 10 seconds
+            maximumAge: 0 // Prevent using cached location data
+        }
+    );
+} else {
+    alert('Geolocation is not supported by your browser.');
+}
+```
+<div>
+Issue2 - Map Re-rendering Efficiency : In the original code, every time a new location was provided or a new destination was set, the entire map was re-rendered. This caused performance issues, particularly on slower devices, as it involved resetting the entire map instead of just updating the necessary parts like markers or routes.
+
+Before 
+
+```
+function updateMap(location) {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: location,
+        zoom: 15
+    });
+}
+```
+Solution: Instead of re-rendering the entire map, the marker and route were updated selectively, which drastically improved performance by reducing unnecessary map resets.
+
+```
+function updateMarker(location) {
+    if (!marker) {
+        marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+    } else {
+        marker.setPosition(location); // Efficiently update the marker's position
+    }
+}
+
+// Update route only when necessary, without re-rendering the whole map
+function updateRoute(userLocation, destination) {
+    const request = {
+        origin: userLocation,
+        destination: destination,
+        travelMode: google.maps.TravelMode.WALKING
+    };
+
+    directionsService.route(request, function (result, status) {
+        if (status === google.maps.DirectionsStatus.OK) {
+            directionsRenderer.setDirections(result); // Efficiently updates the route
+        } else {
+            alert('Directions request failed due to ' + status);
+        }
+    });
+}
+```
+# Structure
 <img src="https://github.com/leonongit/Rmit_Hackathon/blob/main/images/webDevelopment.png?raw=true"></img><p>
 
 
